@@ -1,0 +1,30 @@
+.include /home1/e/ese370/ptm/22nm_HP.pm
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: basic_cell_read_write_stable{sch}
+Mnmos@0 bit_i bit_b_i gnd gnd N L=0.022U W=0.022U
+Mnmos@1 bit_b_i bit_i gnd gnd N L=0.022U W=0.022U
+Mnmos@2 bit_b_i word bit_b gnd N L=0.022U W=0.022U
+Mnmos@3 bit word bit_i gnd N L=0.022U W=0.022U
+Mpmos@0 vdd bit_b_i bit_i vdd P L=0.022U W=0.022U
+Mpmos@1 vdd bit_i bit_b_i vdd P L=0.022U W=0.022U
+VVPWL@0 bit_b gnd pwl (0ps 1v 60ps 1v 62ps 0v 80ps 0v 82ps 1v 100ps 1v 102ps 0v) DC 0V AC 0V 0
+VVPWL@1 bit gnd pwl (0ps 0v 20ps 0v 22ps 1v 100ps1v 102ps 0v) DC 0V AC 0V 0
+VVPWL@2 word gnd pwl (0ps 1v 20ps 1v 22ps 0v 40ps 0v 42ps 1v 80ps 1v 82ps 0v 100ps 0v 102ps 1v) DC 0V AC 0V 0
+VV_Generi@0 vdd gnd DC 1 AC 0
+.END
+
+* Test cell read and write stability
+* Cell should not flip state when both bit lines are precharged up to vdd
+* Cell should only flip state when one of the bit lines are discharged to gnd
+* Although both bit lines should never be gnd at the same time, we will also test that the cell maintains state
+*
+* Test:
+* Word line high, write 0 to bit
+* Word line low, precharge both bit lines
+* Word line high, read operation
+* Word line high, write 1 to bit
+* Word line low, precharge both bit lines
+* Word line high, read operation
+* Word line high, pull both bit lines to gnd
