@@ -1,20 +1,19 @@
-*** SPICE deck for cell sense_amp{sch} from library memory
-*** Created on Wed Nov 18, 2015 23:10:29
-*** Last revised on Wed Nov 18, 2015 23:54:51
-*** Written on Wed Nov 18, 2015 23:54:55 by Electric VLSI Design System, version 9.06
-*** Layout tech: mocmos, foundry MOSIS
-*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
-* Model cards are described in this file:
+
 .include /home1/e/ese370/ptm/22nm_HP.pm
 
 .global gnd vdd
 
-*** TOP LEVEL CELL: sense_amp{sch}
-Mnmos@0 sense_b sense net@25 gnd N L=0.022U W=0.022U
-Mnmos@1 sense sense_b net@25 gnd N L=0.022U W=0.022U
-Mnmos@4 net@25 clk gnd gnd N L=0.022U W=0.088U
-Mpmos@0 bit clk sense vdd P L=0.022U W=0.66U
-Mpmos@1 bit_b clk sense_b vdd P L=0.022U W=0.66U
+*** SUBCIRCUIT sense_amp FROM CELL sense_amp{sch}
+.SUBCKT sense_amp bit bit_b clk sense sense_b w=1
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 sense_b sense s_gnd gnd N L=0.022U W=0.044U
+Mnmos@1 sense sense_b s_gnd gnd N L=0.022U W=0.044U
+Mnmos@4 s_gnd clk gnd gnd N L=0.022U W=0.044U
+Mpmos@0 bit clk sense vdd P L=0.022U W=w*0.022U
+Mpmos@1 bit_b clk sense_b vdd P L=0.022U W=w*0.022U
 Mpmos@2 vdd sense sense_b vdd P L=0.022U W=0.022U
 Mpmos@3 vdd sense_b sense vdd P L=0.022U W=0.022U
+.ENDS sense_amp
+
 .END

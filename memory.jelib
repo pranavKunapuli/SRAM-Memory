@@ -443,7 +443,7 @@ Esense_b||D5G2;|pin@8||O
 X
 
 # Cell sense_amp;1{sch}
-Csense_amp;1{sch}||schematic|1447906229600|1447909139324|
+Csense_amp;1{sch}||schematic|1447906229600|1448217521085|
 Ngeneric:Facet-Center|art@0||0|0||||AV
 NOff-Page|conn@0||-9|14|||RRR|
 NOff-Page|conn@1||2|14|||RRR|
@@ -473,8 +473,8 @@ NWire_Pin|pin@18||-14|-14||||
 NWire_Pin|pin@19||-14|7.5||||
 NWire_Pin|pin@20||-9|-21.5||||
 NWire_Pin|pin@21||2|-21.5||||
-NTransistor|pmos@0||-11|7.5|||R|2|ATTR_length(D5G0.5;X-0.5;Y-1;)S1|ATTR_width(D5G1;X0.5;Y-1;)S4
-NTransistor|pmos@1||0|7.5|||R|2|ATTR_length(D5G0.5;X-0.5;Y-1;)S1|ATTR_width(D5G1;X0.5;Y-1;)S4
+NTransistor|pmos@0||-11|7.5|||R|2|ATTR_length(D5G0.5;X-0.5;Y-1;)S1|ATTR_width(D5G1;X0.5;Y-1;)S1
+NTransistor|pmos@1||0|7.5|||R|2|ATTR_length(D5G0.5;X-0.5;Y-1;)S1|ATTR_width(D5G1;X0.5;Y-1;)S1
 NTransistor|pmos@2||-7|-1.5|||R|2|ATTR_length(D5G0.5;X-0.5;Y-1;)S1|ATTR_width(D5G1;X0.5;Y-1;)S1
 NTransistor|pmos@3||0|-1.5|||XR|2|ATTR_length(D5G0.5;X-0.5;Y-1;)S1|ATTR_width(D5G1;X0.5;Y-1;)S1
 NPower|pwr@0||-3.5|3.5||||

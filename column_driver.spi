@@ -1,0 +1,17 @@
+.include /home1/e/ese370/ptm/22nm_HP.pm
+.include not.spi
+
+.global gnd vdd
+
+*** SUBCIRCUIT column_driver FROM CELL column_driver{sch}
+.SUBCKT column_driver bit bit_b en in w=1
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 bit en in gnd N L=0.022U W=w*0.022U
+Mnmos@1 bit_b en net@1 gnd N L=0.022U W=w*0.022U
+Xnot@0 in net@1 not w=w
+.ENDS column_driver
+
+Xcoll vdd gnd gnd gnd column_driver
+
+.END
