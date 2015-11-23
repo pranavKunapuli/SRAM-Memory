@@ -1,0 +1,14 @@
+.include /home1/e/ese370/ptm/22nm_HP.pm
+
+.global gnd vdd
+
+*** SUBCIRCUIT column_precharger FROM CELL column_precharger{sch}
+.SUBCKT column_precharger bit bit_b en_i w=4
+** GLOBAL gnd
+** GLOBAL vdd
+Mpmos@4 bit_b en_i vdd vdd P L=0.022U W=w*0.022U
+Mpmos@5 bit en_i vdd vdd P L=0.022U W=w*0.022U
+Mpmos@6 bit_b en_i bit vdd P L=0.022U W=0.022U
+.ENDS column_precharger
+
+.END

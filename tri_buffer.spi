@@ -1,0 +1,35 @@
+*** SPICE deck for cell tri_buffer{sch} from library memory
+*** Created on Wed Nov 18, 2015 13:55:42
+*** Last revised on Thu Nov 19, 2015 10:44:38
+*** Written on Sun Nov 22, 2015 14:46:54 by Electric VLSI Design System, version 9.06
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+.options parhier=local
+* Model cards are described in this file:
+.include /home1/e/ese370/ptm/22nm_HP.pm
+
+*** SUBCIRCUIT memory__not FROM CELL not{sch}
+.SUBCKT memory__not A A_
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 A_ A gnd gnd N L=0.022U W=0.088U
+Mpmos@0 vdd A A_ vdd P L=0.022U W=0.088U
+.ENDS memory__not
+
+.global gnd vdd
+
+*** SUBCIRCUIT tri_buffer FROM CELL tri_buffer{sch}
+.SUBCKT tri_buffer en in out
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 out en net@5 gnd N L=0.022U W=0.352U
+Mnmos@1 net@5 in gnd gnd N L=0.022U W=0.352U
+Mpmos@0 net@4 net@1 out vdd P L=0.022U W=0.352U
+Mpmos@1 vdd in net@4 vdd P L=0.022U W=0.352U
+Xnot@0 en net@1 memory__not
+.ENDS tri_buffer
+
+
+Xtri_buffer en in out tri_buffer
+
+.END
