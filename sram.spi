@@ -1,0 +1,18 @@
+
+.include /home1/e/ese370/ptm/22nm_HP.pm
+
+.global gnd vdd
+
+*** SUBCIRCUIT sram FROM CELL sram{sch}
+.SUBCKT sram bit bit_b word
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 bit_b_i bit_i gnd gnd N L=0.022U W=0.022U
+Mnmos@1 bit_i bit_b_i gnd gnd N L=0.022U W=0.022U
+Mnmos@2 bit_i word bit gnd N L=0.022U W=0.022U
+Mnmos@3 bit_b word bit_b_i gnd N L=0.022U W=0.022U
+Mpmos@0 vdd bit_i bit_b_i vdd P L=0.022U W=0.022U
+Mpmos@1 vdd bit_b_i bit_i vdd P L=0.022U W=0.022U
+.ENDS sram
+
+.END
