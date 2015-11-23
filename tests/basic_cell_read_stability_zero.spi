@@ -1,0 +1,39 @@
+
+* Model cards are described in this file:
+.include /home1/e/ese370/ptm/22nm_HP.pm
+.include ../not.spi
+.include ../column_driver.spi
+.include ../column_precharger.spi
+.include ../sense_amp.spi
+.include ../sram.spi
+
+.global gnd vdd
+
+VVPWL@word net@word gnd pwl (0ps 1v 40ps 1v 42ps 0v 80ps 0v 82ps 1v 120ps 1v 122ps 0v 160ps 0v 162ps 1v) DC 0V AC 0V 0
+VVPWL@cde net@col_dri_en gnd pwl (0ps 1v 40ps 1v 42ps 0v 120ps 0v 122ps 1v 160ps 1v 162ps 0v) DC 0V AC 0V 0
+VVPWL@cpe net@col_pre_en gnd pwl (0ps 0v 40ps 0v 42ps 1v 80ps 1v 82ps 0v 160ps 0v 162ps 1v 200ps 1v 202ps 0v) DC 0V AC 0V 0
+VVPWL@i net@in gnd pwl (0ps 0v 120ps 0v 122ps 1v) DC 0V AC 0V 0
+VVPWL@sc net@sense_clk gnd pwl (0ps 1v 40ps 1v 42ps 0v 90ps 0v 92ps 1v 160ps 1v 162ps 0v 210ps 0v 212ps 1v) DC 0V AC 0V 0
+VV_Generi@0 vdd gnd DC 1 AC 0
+Xcolumn_d@0 net@bit_b net@bit net@col_dri_en net@in column_driver w=8
+Xcolumn_p@0 net@bit_b net@bit net@col_pre_en column_precharger w=16
+Xnot@2 net@sense not@2_A_ not
+Xnot@3 net@sense_b not@3_A_ not
+Xsense_am@0 net@bit net@bit_b net@sense_clk net@sense net@sense_b sense_amp w=8
+Xsram@0 net@bit net@bit_b net@word sram
+
+.END
+
+* Test:
+* Write 0 to bit
+* Read 0 from bit
+* Charge bit lines as if to write 1
+* Read 0 from bit
+
+* 0 ps		: Word line high, enable column driver, input 0 
+* 40 ps		: Word line low, disable column driver, enable column precharger, sense_amp clock off
+* 80 ps		: Word line high, disable column precharger, toggle sense_amp clock on quickly afterwards
+* 120 ps	: Word line low, enable column driver, input 1
+* 160 ps	: disable column driver, enable column precharger, sense_amp clock off
+* 200 ps	: Word line high, disable column precharger, toggle sense_amp clock on quickly afterwards
+

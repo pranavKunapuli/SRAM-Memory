@@ -19,7 +19,7 @@ Xcolumn_d@0 net@bit_b net@bit net@col_dri_en net@in column_driver w=8
 Xcolumn_p@0 net@bit_b net@bit net@col_pre_en column_precharger w=16
 Xnot@2 net@sense not@2_A_ not
 Xnot@3 net@sense_b not@3_A_ not
-Xsense_am@0 net@bit net@bit_b net@sense_clk net@sense net@sense_b sense_amp w=8
+Xsense_am@0 net@bit net@bit_b net@sense_clk net@sense net@sense_b sense_amp w=16
 Xsram@0 net@bit net@bit_b net@word sram
 
 .END
