@@ -15,8 +15,8 @@ VVPWL@cpe net@col_pre_en gnd pwl (0ps 0v 40ps 0v 42ps 1v 80ps 1v 82ps 0v 200ps 0
 VVPWL@i net@in gnd pwl (0ps 0v 160ps 0v 162ps 1v ) DC 0V AC 0V 0
 VVPWL@sc net@sense_clk gnd pwl (0ps 1v 40ps 1v 42ps 0v 100ps 0v 102ps 1v 200ps 1v 202ps 0v 260ps 0v 262ps 1v) DC 0V AC 0V 0
 VV_Generi@0 vdd gnd DC 1 AC 0
-Xcolumn_d@0 net@bit_b net@bit net@col_dri_en net@in column_driver w=8
-Xcolumn_p@0 net@bit_b net@bit net@col_pre_en column_precharger w=16
+Xcolumn_d@0 net@bit net@bit_b net@col_dri_en net@in column_driver w=8
+Xcolumn_p@0 net@bit net@bit_b net@col_pre_en column_precharger w=16
 Xnot@2 net@sense not@2_A_ not
 Xnot@3 net@sense_b not@3_A_ not
 Xsense_am@0 net@bit net@bit_b net@sense_clk net@sense net@sense_b sense_amp w=8
