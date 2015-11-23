@@ -1,20 +1,7 @@
-<<<<<<< HEAD
-=======
 
->>>>>>> refs/remotes/origin/tristate_sense_amp
 .include /home1/e/ese370/ptm/22nm_HP.pm
 
 .global gnd vdd
-
-<<<<<<< HEAD
-*** SUBCIRCUIT column_precharger FROM CELL column_precharger{sch}
-.SUBCKT column_precharger bit bit_b en_i w=4
-** GLOBAL gnd
-** GLOBAL vdd
-Mpmos@4 bit_b en_i vdd vdd P L=0.022U W=w*0.022U
-Mpmos@5 bit en_i vdd vdd P L=0.022U W=w*0.022U
-Mpmos@6 bit_b en_i bit vdd P L=0.022U W=0.022U
-=======
 .SUBCKT column_precharger bit bit_b en_i w=4
 
 Mnmos@0 v_i v_i gnd gnd N L=0.022U W=w*0.25*0.022U
@@ -24,7 +11,6 @@ Mnmos@3 bit_b en_i v_half gnd N L=0.022U W=w*0.022U
 Mnmos@4 bit_b en_i bit gnd N L=0.022U W=w*0.022U
 Mpmos@7 vdd v_i v_i vdd P L=0.022U W=w*0.25*0.022U
 Mpmos@9 vdd v_i v_half vdd P L=0.022U W=w*0.022U
->>>>>>> refs/remotes/origin/tristate_sense_amp
 .ENDS column_precharger
 
 .END
