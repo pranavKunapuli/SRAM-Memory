@@ -30,10 +30,10 @@ Xsram@0 net@bit net@bit_b net@word sram
 * Write 1 to bit
 * Read 1 from bit
 *
-* 0ps:		Word line high, enable column driver, input 0
-* 40ps:		Word line low, disable column driver, enable column precharger, sense_amp clock off
-* 80ps:		Word line high, disable column precharger, toggle sense_amp clock on quickly afterwards
+* Word line high, enable column driver, input 0
+* Word line low, disable column driver, enable column precharger, sense_amp clock off
+* Word line high, disable column precharger, toggle sense_amp clock on quickly afterwards
 *
-* 160ps:	Word line high, enable column driver, input 1
-* 200ps:	Word line low, disable column driver, enable column precharger, sense_amp clock off
-* 240ps:	Word line high, disable column precharger, toggle sense_amp clock on quickly afterwards
+* Word line high, enable column driver, input 1
+* Word line low, disable column driver, enable column precharger, sense_amp clock off
+* Word line high, disable column precharger, toggle sense_amp clock on quickly afterwards
