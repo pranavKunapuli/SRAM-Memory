@@ -1,0 +1,57 @@
+
+* Model cards are described in this file:
+.include /home1/e/ese370/ptm/22nm_HP.pm
+.include ../not.spi
+.include ../column_driver.spi
+.include ../column_precharger.spi
+.include ../sense_amp.spi
+.include ../sram.spi
+
+.global gnd vdd
+
+VVPWL@word net@word gnd pwl (0ps 0v 2ps 1v 80ps 1v 82ps 0v 320ps 0v 322ps 1v) DC 0V AC 0V 0
+VVPWL@cde net@col_dri_en gnd pwl (0ps 0v 5ps 0v 7ps 1v 80ps 1v 82ps 0v 165ps 0v 167ps 1v 240ps 1v 242ps 0v 325ps 0v 327ps 1v) DC 0V AC 0V 0
+VVPWL@cpe net@col_pre_en gnd pwl (0ps 1v 2ps 0v 80ps 0v 82ps 1v 160ps 1v 162ps 0v 240ps 0v 242ps 1v 320ps 1v 322ps 0v) DC 0V AC 0V 0
+VVPWL@i net@in gnd pwl (0ps 1v 70ps 1v 72ps 0v 165ps 0v 167ps 1v) DC 0V AC 0V 0
+VVPWL@sc net@sense_clk gnd pwl (0ps 0v 5ps 0v 7ps 1v 80ps 1v 82ps 0v 165ps 0v 167ps 1v 240ps 1v 242ps 0v 325ps 0v 327ps 1v) DC 0V AC 0V 0
+VV_Generi@0 vdd gnd DC 1 AC 0
+Xcolumn_d@0 net@bit net@bit_b net@col_dri_en net@in column_driver w=8
+Xcolumn_p@0 net@bit net@bit_b net@col_pre_en column_precharger w=16
+Xnot@2 net@sense not@2_A_ not
+Xnot@3 net@sense_b not@3_A_ not
+Xsense_am@0 net@bit net@bit_b net@sense_clk net@sense net@sense_b sense_amp w=4
+Xsram@0 net@bit net@bit_b net@word sram
+Xsram@1 net@bit net@bit_b gnd sram
+Xsram@2 net@bit net@bit_b gnd sram
+Xsram@3 net@bit net@bit_b gnd sram
+Xsram@4 net@bit net@bit_b gnd sram
+Xsram@5 net@bit net@bit_b gnd sram
+Xsram@6 net@bit net@bit_b gnd sram
+Xsram@7 net@bit net@bit_b gnd sram
+
+.END
+
+* Test:
+* Write 0 to bit
+* Charge bit lines as if writing 1
+* Read 0 from bit (while beginning to write 1 to bit)
+*
+* 0ps:				Word line high, disable column precharger
+* 0 + 5ps:			enable column driver, sense_clk on, write 0
+
+* Constraint: Send input 0 before column driver is disabled
+
+* 80ps:				Word line low, enable column precharger, disable column driver, sense_amp clock off
+* 160ps: 			disable column precharger
+* 160 + 5ps:		enable column driver, sense_clk on, write 1
+* 240ps:			enable column precharger, disable column driver, sense_amp clock off
+* 320ps: 			Word line high, disable column precharger
+* 320 + 5ps:		enable column driver and toggle sense_amp clock on
+*
+* Constraint: sense_amp clock toggle time needed to properly record value
+* Constraint: time needed after word line high for read value to settle
+*
+* input setup time: 10ps before word line falls low
+* sense_clk toggle time: 5ps after word line goes high
+* output delay time: 20 ps after sense_clk goes high
+
