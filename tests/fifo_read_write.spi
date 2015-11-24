@@ -21,6 +21,13 @@ Xnot@2 net@sense not@2_A_ not
 Xnot@3 net@sense_b not@3_A_ not
 Xsense_am@0 net@bit net@bit_b net@sense_clk net@sense net@sense_b sense_amp w=8
 Xsram@0 net@bit net@bit_b net@word sram
+Xsram@1 net@bit net@bit_b gnd sram
+Xsram@2 net@bit net@bit_b gnd sram
+Xsram@3 net@bit net@bit_b gnd sram
+Xsram@4 net@bit net@bit_b gnd sram
+Xsram@5 net@bit net@bit_b gnd sram
+Xsram@6 net@bit net@bit_b gnd sram
+Xsram@7 net@bit net@bit_b gnd sram
 
 .END
 
@@ -30,10 +37,13 @@ Xsram@0 net@bit net@bit_b net@word sram
 * Write 1 to bit
 * Read 1 from bit
 *
-* 0ps:		Word line high, enable column driver, input 0
+* 0ps:		Word line high, enable column driver
+* Constraint: Send input 0 before column driver is disabled
 * 40ps:		Word line low, disable column driver, enable column precharger, sense_amp clock off
-* 80ps:		Word line high, disable column precharger, toggle sense_amp clock on quickly afterwards
-*
-* 160ps:	Word line high, enable column driver, input 1
+* 80ps: 	Word line high, disable column precharger, toggle sense_amp clock on quickly afterwards
+* Constraint: 
+
+* 160ps: 	Word line high, enable column driver
+* Constraint: Send input 1 before column driver is disabled
 * 200ps:	Word line low, disable column driver, enable column precharger, sense_amp clock off
 * 240ps:	Word line high, disable column precharger, toggle sense_amp clock on quickly afterwards
