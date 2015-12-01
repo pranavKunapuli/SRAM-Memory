@@ -1,0 +1,69 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{tikz}
+\usepackage[strict]{changepage}
+\usepackage{amsthm}
+\usepackage{float}
+\usepackage{fancyhdr}
+ 
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\title{ESE 370: Project 2 Milestone}
+
+\author{Martin Deng and Pranav Kunapuli}
+
+\date{\today}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Martin Deng and Pranav Kunapuli}
+\chead{Milestone Report}
+\lhead{ESE 370: Project 2}
+\cfoot{\thepage}
+
+\begin{document}
+
+\begin{enumerate}
+
+\item \textbf{Bit Line Capacitance} \\
+
+\item \textbf{Column Driver and Memory Cell Schematics} \\
+
+\item \textbf{Test Cases to Validate Operation} \\
+To validate correct operation of our memory cell, we set up a few test cases to make sure that we can read and write. For writing, we had to make sure that we could write the following scenarios:
+
+\begin{enumerate}
+
+\item Write high to a cell containing a low value
+\item Write high to a cell containing a high value
+\item Write low to a cell containing a low value
+\item Write low to a cell containing a high value
+
+\end{enumerate}
+
+These test cases cover the four possible scenarios of a writing to a memory cell, and are therefore sufficient to demonstrate correctness. To properly test our reading ability, we used these test cases:
+
+\begin{enumerate}
+
+\item Read from a high cell
+\item Read from a low cell
+\item Read from a low cell while writing high
+\item Read from a low cell while writing low
+\item Read from a high cell while writing high
+\item Read from a high cell while writing low
+
+\end{enumerate}
+
+Similar to the cases listed for writing, these six cases encompass all possible read situations, and therefore can be used to show that our memory cell can properly read out values.
+
+\item \textbf{Demonstration of Writing to Cell} \\
+
+\item \textbf{Demonstration of Reading from Cell} \\
+
+\item \textbf{Full Design Write Timing Constraints}\\
+
+\end{enumerate}
+
+\end{document}
