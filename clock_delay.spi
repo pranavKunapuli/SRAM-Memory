@@ -1,0 +1,22 @@
+
+* Model cards are described in this file:
+.include /home1/e/ese370/ptm/22nm_HP.pm
+.include ./not.spi
+.include ./nand2.spi
+
+.global gnd vdd
+
+*** SUBCIRCUIT clock_delay FROM CELL clock_delay{sch}
+.SUBCKT clock_delay clk clk_d
+** GLOBAL gnd
+** GLOBAL vdd
+Xnand2@0 clk_n clk_n_d clk_d nand2 w=16
+Xnot@0 clk clk_n not w=4
+Xnot@1 clk net@1 not w=4
+Xnot@2 net@1 net@2 not w=4
+Xnot@3 net@2 net@3 not w=4
+Xnot@4 net@3 net@4 not w=4
+Xnot@5 net@4 clk_n_d not w=4
+.ENDS clock_delay
+
+.END

@@ -1,0 +1,12 @@
+
+.include /home1/e/ese370/ptm/22nm_HP.pm
+.include ../clock_delay.spi
+
+.global gnd vdd
+
+Mnmos@0 vdd net@clk_d gnd gnd N L=0.022U W=0.352U
+VVPulse@0 net@clk gnd pulse (0 1V 0ns 20ps 20ps 1ns 2ns) DC 0V AC 0V 0
+VV_Generi@0 vdd gnd DC 1 AC 0
+Xclock_de@0 net@clk net@clk_d clock_delay
+
+.END
