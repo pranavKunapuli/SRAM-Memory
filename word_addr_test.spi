@@ -1,8 +1,8 @@
 
 .include /home1/e/ese370/ptm/22nm_HP.pm
-.include ../empty_tester.spi
-.include ../full_tester.spi
-.include ../shift_reg.spi
+.include ./empty_tester.spi
+.include ./full_tester.spi
+.include ./shift_reg.spi
 
 .global gnd vdd
 
