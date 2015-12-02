@@ -6,7 +6,7 @@
 .global gnd vdd
 
 *** SUBCIRCUIT empty_tester FROM CELL empty_tester{sch}
-.SUBCKT empty_tester empty r0 r1 r2 r3 r4 r5 r6 r7 w0 w1 w2 w3 w4 w5 w6 w7
+.SUBCKT empty_tester empty r0 r1 r2 r3 r4 r5 r6 r7 r8 w0 w1 w2 w3 w4 w5 w6 w7 w8
 ** GLOBAL gnd
 ** GLOBAL vdd
 

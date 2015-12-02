@@ -9,7 +9,7 @@
 VVPWL@0 deq gnd pwl (0ns 0v) DC 0V AC 0V 0
 VVPWL@1 reset gnd pwl (0ns 0v  0ns 1v 1ns 1v 1ns 0v) DC 0V AC 0V 0
 VVPWL@2 enq gnd pwl (0ns 0v 1.5ns 0v 1.5ns 1v) DC 0V AC 0V 0
-VVPulse@0 clk gnd pulse (0 1V 0ns 0ps 0ps 1ns 2ns) DC 0V AC 0V 0
+VVPulse@0 clk gnd pulse (0 1V 0ns 200ps 200ps 1ns 2ns) DC 0V AC 0V 0
 VV_Generi@0 vdd gnd DC 1 AC 0
 Xempty_te@0 empty r0 r1 r2 r3 r4 r5 r6 r7 r8 w0 w1 w2 w3 w4 w5 w6 w7 w8 empty_tester
 Xfull_tes@0 full r0 r1 r2 r3 r4 r5 r6 r7 r8 w0 w1 w2 w3 w4 w5 w6 w7 w8 full_tester
