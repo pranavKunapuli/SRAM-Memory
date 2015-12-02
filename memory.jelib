@@ -1108,7 +1108,7 @@ Ew7||D5G2;|conn@15|a|I
 X
 
 # Cell fifo;1{sch}
-Cfifo;1{sch}||schematic|1449092517385|1449092706790|
+Cfifo;1{sch}||schematic|1449092517385|1449093895544|
 Ngeneric:Facet-Center|art@0||0|0||||AV
 NOff-Page|conn@0||-51|-28||||
 NOff-Page|conn@1||-52|-18||||
@@ -1117,13 +1117,30 @@ NOff-Page|conn@3||-52|-14||||
 NOff-Page|conn@4||-52|-12||||
 NOff-Page|conn@5||-52|3||||
 NOff-Page|conn@6||-52|15||||
+NOff-Page|conn@7||-31|24||||
 Id_ff_sr;1{ic}|d_ff_sr@0||-32|14|||D5G4;
 Id_ff_sr;1{ic}|d_ff_sr@1||-32|2|||D5G4;
+Iempty_tester;1{ic}|empty_te@0||58|29|||D5G4;
+Ifull_tester;1{ic}|full_tes@0||59|-9|||D5G4;
 Iinput_reg;1{ic}|input_re@0||-32|-16|||D5G4;
 NWire_Pin|pin@0||-43|-28||||
 NWire_Pin|pin@1||-43|13||||
 NWire_Pin|pin@2||-43|1||||
 NWire_Pin|pin@3||-43|-20||||
+NWire_Pin|pin@4||-18|-28||||
+NWire_Pin|pin@5||-18|19||||
+NWire_Pin|pin@6||-18|25||||
+NWire_Pin|pin@7||16|25||||
+NWire_Pin|pin@8||16|19||||
+NWire_Pin|pin@9||12|3||||
+NWire_Pin|pin@10||12|15||||
+NWire_Pin|pin@11||-23|24||||
+NWire_Pin|pin@12||-23|11||||
+NWire_Pin|pin@13||-5|11||||
+NWire_Pin|pin@14||-10|11||||
+NWire_Pin|pin@15||-10|4||||
+NWire_Pin|pin@16||14|4||||
+NWire_Pin|pin@17||14|12||||
 Ishift_reg;1{ic}|shift_re@0||0|14|||D5G4;
 Ishift_reg;1{ic}|shift_re@1||25|14|||D5G4;
 Awire|net@0|||1800|conn@0|y|-49|-28|pin@0||-43|-28
@@ -1139,6 +1156,26 @@ Awire|net@11|||0|input_re@0|In0|-37|-12|conn@4|y|-50|-12
 Awire|net@12|||1800|conn@3|y|-50|-14|input_re@0|In1|-37|-14
 Awire|net@13|||0|input_re@0|In2|-37|-16|conn@2|y|-50|-16
 Awire|net@14|||1800|conn@1|y|-50|-18|input_re@0|In3|-37|-18
+Awire|net@15|||1800|pin@0||-43|-28|pin@4||-18|-28
+Awire|net@16|||2700|pin@4||-18|-28|pin@5||-18|19
+Awire|net@17|||1800|pin@5||-18|19|shift_re@0|Clk|-5|19
+Awire|net@18|||2700|pin@5||-18|19|pin@6||-18|25
+Awire|net@19|||1800|pin@6||-18|25|pin@7||16|25
+Awire|net@20|||900|pin@7||16|25|pin@8||16|19
+Awire|net@21|||1800|pin@8||16|19|shift_re@1|Clk|20|19
+Awire|net@22|||1800|d_ff_sr@0|Q|-27|15|shift_re@0|En|-5|15
+Awire|net@23|||1800|d_ff_sr@1|Q|-27|3|pin@9||12|3
+Awire|net@24|||2700|pin@9||12|3|pin@10||12|15
+Awire|net@25|||1800|pin@10||12|15|shift_re@1|En|20|15
+Awire|net@26|||1800|conn@7|y|-29|24|pin@11||-23|24
+Awire|net@27|||900|pin@11||-23|24|pin@12||-23|11
+Awire|net@29|||900|shift_re@0|Reset|-5|12|pin@13||-5|11
+Awire|net@30|||1800|pin@12||-23|11|pin@14||-10|11
+Awire|net@31|||1800|pin@14||-10|11|pin@13||-5|11
+Awire|net@32|||900|pin@14||-10|11|pin@15||-10|4
+Awire|net@33|||1800|pin@15||-10|4|pin@16||14|4
+Awire|net@34|||2700|pin@16||14|4|pin@17||14|12
+Awire|net@35|||1800|pin@17||14|12|shift_re@1|Reset|20|12
 EClk||D5G2;|conn@0|a|I
 EDequeue||D5G2;|conn@5|a|I
 EEnqueue||D5G2;|conn@6|a|I
@@ -1146,6 +1183,7 @@ EIn0||D5G2;|conn@4|a|I
 EIn1||D5G2;|conn@3|a|I
 EIn2||D5G2;|conn@2|a|I
 EIn3||D5G2;|conn@1|a|I
+EReset||D5G2;|conn@7|a|I
 X
 
 # Cell fifo_delay_test;1{sch}
@@ -2740,6 +2778,21 @@ Awire|net@52|||0|pin@22||4|1|pin@23||-0.5|1
 Ebit||D5G2;|conn@1|a|B
 Ebit_b||D5G2;|conn@2|a|B
 Eword||D5G2;|conn@0|a|I
+X
+
+# Cell testers;1{sch}
+Ctesters;1{sch}||schematic|1449093910757|1449093957565|
+Ngeneric:Facet-Center|art@0||0|0||||AV
+NOff-Page|conn@0||-43|26||||
+NOff-Page|conn@1||-43|24||||
+NOff-Page|conn@2||-43|22||||
+NOff-Page|conn@3||-43|20||||
+NOff-Page|conn@4||-43|18||||
+NOff-Page|conn@5||-43|16||||
+NOff-Page|conn@6||-43|14||||
+NOff-Page|conn@7||-43|12||||
+Iempty_tester;1{ic}|empty_te@0||-9|11|||D5G4;
+Ifull_tester;1{ic}|full_tes@0||-9|-24|||D5G4;
 X
 
 # Cell tri_buffer;1{ic}
