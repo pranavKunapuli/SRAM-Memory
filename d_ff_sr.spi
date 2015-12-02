@@ -1,6 +1,6 @@
 
 .include /home1/e/ese370/ptm/22nm_HP.pm
-.include /nand3.spi
+.include ./nand3.spi
 
 .global gnd vdd
 
@@ -13,7 +13,7 @@ Xnand3@5 Q net@25 R Q_ nand3
 Xnand3@6 S net@20 net@10 net@15 nand3
 Xnand3@7 net@15 Clk R net@10 nand3
 Xnand3@8 net@10 Clk net@20 net@25 nand3
-Xnand3@9 net@25 D R net@20 mnand3
+Xnand3@9 net@25 D R net@20 nand3
 .ENDS d_ff_sr
 
 .END
