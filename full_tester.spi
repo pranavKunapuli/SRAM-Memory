@@ -7,7 +7,7 @@
 .global gnd vdd
 
 *** SUBCIRCUIT full_tester FROM CELL full_tester{sch}
-.SUBCKT full_tester empty r0 r1 r2 r3 r4 r5 r6 r7 r8 w0 w1 w2 w3 w4 w5 w6 w7 w8
+.SUBCKT full_tester full r0 r1 r2 r3 r4 r5 r6 r7 r8 w0 w1 w2 w3 w4 w5 w6 w7 w8
 
 Xnand2@4 r0 w8 net@16 nand2 w=1
 Xnand2@5 r1 w0 net@18 nand2 w=1
@@ -30,7 +30,9 @@ Xnor2@9 net@38 net@36 net@42 nor2 w=4
 Xnand2@12 net@40 net@42 net@102 nand2 w=8
 
 Xnot@0 net@106 net@102 not w=16
-Xnand2@15 net@102 net@103 empty nand2 w=32
+Xnand2@15 net@102 net@103 full_n nand2 w=32
+
+Xnot@1 full_n full not w=32
 
 .ENDS full_tester
 
