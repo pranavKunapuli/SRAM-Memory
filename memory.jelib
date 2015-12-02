@@ -2071,9 +2071,9 @@ Awire|net@32|||900|sense_am@0|sense_b|4.5|-2.5|pin@6||4.5|-7
 X
 
 # Cell shift_reg;1{ic}
-Cshift_reg;1{ic}||artwork|1449088311415|1449088330893|E
+Cshift_reg;1{ic}||artwork|1449088311415|1449090300992|E
 Ngeneric:Facet-Center|art@0||0|0||||AV
-NOpened-Thicker-Polygon|art@1||0|0|6|16|||SCHEM_function(D5G2;)Sshift_reg|trace()V[-3/-8,-3/8,3/8,3/-8,-3/-8]
+NOpened-Thicker-Polygon|art@1||0|0|6|18|||SCHEM_function(D5G2;)Sshift_reg|trace()V[-3/-9,-3/9,3/9,3/-9,-3/-9]
 Nschematic:Bus_Pin|pin@0||-5|5||||
 Nschematic:Wire_Pin|pin@1||-3|5||||
 Nschematic:Bus_Pin|pin@2||-5|1||||
@@ -2082,34 +2082,37 @@ Nschematic:Bus_Pin|pin@4||-5|-2||||
 Nschematic:Wire_Pin|pin@5||-3|-2||||
 Nschematic:Bus_Pin|pin@6||-5|-5||||
 Nschematic:Wire_Pin|pin@7||-3|-5||||
-Nschematic:Bus_Pin|pin@8||5|7||||
-Nschematic:Wire_Pin|pin@9||3|7||||
-Nschematic:Bus_Pin|pin@10||5|5||||
-Nschematic:Wire_Pin|pin@11||3|5||||
-Nschematic:Bus_Pin|pin@12||5|3||||
-Nschematic:Wire_Pin|pin@13||3|3||||
-Nschematic:Bus_Pin|pin@14||5|1||||
-Nschematic:Wire_Pin|pin@15||3|1||||
-Nschematic:Bus_Pin|pin@16||5|-1||||
-Nschematic:Wire_Pin|pin@17||3|-1||||
-Nschematic:Bus_Pin|pin@18||5|-3||||
-Nschematic:Wire_Pin|pin@19||3|-3||||
-Nschematic:Bus_Pin|pin@20||5|-5||||
-Nschematic:Wire_Pin|pin@21||3|-5||||
-Nschematic:Bus_Pin|pin@22||5|-7||||
-Nschematic:Wire_Pin|pin@23||3|-7||||
+Nschematic:Bus_Pin|pin@8||5|8||||
+Nschematic:Wire_Pin|pin@9||3|8||||
+Nschematic:Bus_Pin|pin@10||5|6||||
+Nschematic:Wire_Pin|pin@11||3|6||||
+Nschematic:Bus_Pin|pin@12||5|4||||
+Nschematic:Wire_Pin|pin@13||3|4||||
+Nschematic:Bus_Pin|pin@14||5|2||||
+Nschematic:Wire_Pin|pin@15||3|2||||
+Nschematic:Bus_Pin|pin@16||5|0||||
+Nschematic:Wire_Pin|pin@17||3|0||||
+Nschematic:Bus_Pin|pin@18||5|-2||||
+Nschematic:Wire_Pin|pin@19||3|-2||||
+Nschematic:Bus_Pin|pin@20||5|-4||||
+Nschematic:Wire_Pin|pin@21||3|-4||||
+Nschematic:Bus_Pin|pin@22||5|-6||||
+Nschematic:Wire_Pin|pin@23||3|-6||||
+Nschematic:Bus_Pin|pin@24||5|-8||||
+Nschematic:Wire_Pin|pin@25||3|-8||||
 Aschematic:wire|net@0|||0|pin@1||-3|5|pin@0||-5|5
 Aschematic:wire|net@1|||0|pin@3||-3|1|pin@2||-5|1
 Aschematic:wire|net@2|||0|pin@5||-3|-2|pin@4||-5|-2
 Aschematic:wire|net@3|||0|pin@7||-3|-5|pin@6||-5|-5
-Aschematic:wire|net@4|||1800|pin@9||3|7|pin@8||5|7
-Aschematic:wire|net@5|||1800|pin@11||3|5|pin@10||5|5
-Aschematic:wire|net@6|||1800|pin@13||3|3|pin@12||5|3
-Aschematic:wire|net@7|||1800|pin@15||3|1|pin@14||5|1
-Aschematic:wire|net@8|||1800|pin@17||3|-1|pin@16||5|-1
-Aschematic:wire|net@9|||1800|pin@19||3|-3|pin@18||5|-3
-Aschematic:wire|net@10|||1800|pin@21||3|-5|pin@20||5|-5
-Aschematic:wire|net@11|||1800|pin@23||3|-7|pin@22||5|-7
+Aschematic:wire|net@4|||1800|pin@9||3|8|pin@8||5|8
+Aschematic:wire|net@5|||1800|pin@11||3|6|pin@10||5|6
+Aschematic:wire|net@6|||1800|pin@13||3|4|pin@12||5|4
+Aschematic:wire|net@7|||1800|pin@15||3|2|pin@14||5|2
+Aschematic:wire|net@8|||1800|pin@17||3|0|pin@16||5|0
+Aschematic:wire|net@9|||1800|pin@19||3|-2|pin@18||5|-2
+Aschematic:wire|net@10|||1800|pin@21||3|-4|pin@20||5|-4
+Aschematic:wire|net@11|||1800|pin@23||3|-6|pin@22||5|-6
+Aschematic:wire|net@12|||0|pin@24||5|-8|pin@25||3|-8
 EClk||D5G2;|pin@0||I
 EEn||D5G2;|pin@2||I
 EReset||D5G2;|pin@4||I
@@ -2122,10 +2125,11 @@ EW4||D5G2;|pin@16||O
 EW5||D5G2;|pin@18||O
 EW6||D5G2;|pin@20||O
 EW7||D5G2;|pin@22||O
+EW8||D5G2;|pin@24||O
 X
 
 # Cell shift_reg;1{sch}
-Cshift_reg;1{sch}||schematic|1448983839355|1449088312946|
+Cshift_reg;1{sch}||schematic|1448983839355|1449090120820|
 Ngeneric:Facet-Center|art@0||0|0||||AV
 NOff-Page|conn@11||-95|-14||||
 NOff-Page|conn@12||-95|-16||||
@@ -2139,6 +2143,7 @@ NOff-Page|conn@20||14|-30|||R|
 NOff-Page|conn@21||31|-30|||R|
 NOff-Page|conn@22||48|-30|||R|
 NOff-Page|conn@23||65|-30|||R|
+NOff-Page|conn@24||88|-30|||R|
 Id_ff_sr;1{ic}|d_ff_sr@0||-56|5|||D5G4;
 Id_ff_sr;1{ic}|d_ff_sr@1||-40|5|||D5G4;
 Id_ff_sr;1{ic}|d_ff_sr@2||-25|5|||D5G4;
@@ -2147,6 +2152,7 @@ Id_ff_sr;1{ic}|d_ff_sr@4||8|5|||D5G4;
 Id_ff_sr;1{ic}|d_ff_sr@5||24|5|||D5G4;
 Id_ff_sr;1{ic}|d_ff_sr@6||39|5|||D5G4;
 Id_ff_sr;1{ic}|d_ff_sr@7||55|5|||D5G4;
+Id_ff_sr;1{ic}|d_ff_sr@8||78|5|||D5G4;
 Inor3;1{ic}|nor3@1||-73|-16|||D5G4;
 Inot;1{ic}|not@2||-88|-14|||D5G4;
 Inot;1{ic}|not@3||-88|-16|||D5G4;
@@ -2158,7 +2164,6 @@ NWire_Pin|pin@30||19|6||||
 NWire_Pin|pin@31||34|6||||
 NWire_Pin|pin@32||44|6||||
 NWire_Pin|pin@33||65|6||||
-NWire_Pin|pin@34||65|18||||
 NWire_Pin|pin@35||-65|18||||
 NWire_Pin|pin@36||-65|8||||
 NWire_Pin|pin@37||-65|6||||
@@ -2198,6 +2203,14 @@ NWire_Pin|pin@70||0|6||||
 NWire_Pin|pin@71||14|6||||
 NWire_Pin|pin@72||31|6||||
 NWire_Pin|pin@73||48|6||||
+NWire_Pin|pin@74||88|6||||
+NWire_Pin|pin@75||69|-7||||
+NWire_Pin|pin@76||73|-7||||
+NWire_Pin|pin@77||67|-16||||
+NWire_Pin|pin@78||67|3||||
+NWire_Pin|pin@79||67|4||||
+NWire_Pin|pin@80||88|18||||
+NWire_Pin|pin@81||88|18||||
 Ishift_reg;1{ic}|shift_re@0||40|43|||D5G4;
 Awire|net@63|||1800|d_ff_sr@0|Q|-51|6|pin@26||-45|6
 Awire|net@64|||900|d_ff_sr@1|D|-45|6|pin@26||-45|6
@@ -2208,8 +2221,6 @@ Awire|net@72|||900|d_ff_sr@5|D|19|6|pin@30||19|6
 Awire|net@74|||900|d_ff_sr@6|D|34|6|pin@31||34|6
 Awire|net@75|||2700|d_ff_sr@6|Q|44|6|pin@32||44|6
 Awire|net@77|||1800|d_ff_sr@7|Q|60|6|pin@33||65|6
-Awire|net@78|||2700|pin@33||65|6|pin@34||65|18
-Awire|net@79|||0|pin@34||65|18|pin@35||-65|18
 Awire|net@80|||900|pin@35||-65|18|pin@36||-65|8
 Awire|net@81|||900|pin@36||-65|8|pin@37||-65|6
 Awire|net@82|||0|d_ff_sr@0|D|-61|6|pin@37||-65|6
@@ -2284,6 +2295,19 @@ Awire|net@162|||0|d_ff_sr@7|D|50|6|pin@73||48|6
 Awire|net@163|||0|pin@73||48|6|pin@32||44|6
 Awire|net@164|||900|pin@73||48|6|conn@22|y|48|-28
 Awire|net@165|||2700|conn@23|y|65|-28|pin@33||65|6
+Awire|net@166|||2700|conn@24|y|88|-28|pin@74||88|6
+Awire|net@167|||1800|d_ff_sr@8|Q|83|6|pin@74||88|6
+Awire|net@168|||0|d_ff_sr@8|D|73|6|pin@33||65|6
+Awire|net@169|||1800|pin@62||50|-7|pin@75||69|-7
+Awire|net@170|||1800|pin@75||69|-7|pin@76||73|-7
+Awire|net@171|||900|d_ff_sr@8|R|73|1|pin@76||73|-7
+Awire|net@172|||1800|pin@41||47|-16|pin@77||67|-16
+Awire|net@173|||2700|pin@77||67|-16|pin@78||67|3
+Awire|net@174|||2700|pin@78||67|3|pin@79||67|4
+Awire|net@175|||0|d_ff_sr@8|Clk|73|4|pin@79||67|4
+Awire|net@176|||2700|pin@74||88|6|pin@80||88|18
+Awire|net@177|||900|pin@80||88|18|pin@81||88|18
+Awire|net@178|||1800|pin@35||-65|18|pin@81||88|18
 EClk||D5G2;|conn@11|a|I
 EEn||D5G2;|conn@12|a|I
 EReset||D5G2;|conn@14|a|I
@@ -2296,6 +2320,7 @@ EW4||D5G2;|conn@20|a|O
 EW5||D5G2;|conn@21|a|O
 EW6||D5G2;|conn@22|a|O
 EW7||D5G2;|conn@23|a|O
+EW8||D5G2;|conn@24|a|O
 X
 
 # Cell sram;1{ic}
