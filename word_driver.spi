@@ -1,0 +1,38 @@
+
+.include /home1/e/ese370/ptm/22nm_HP.pm
+.include ./shift_reg.spi
+.include ./empty_tester.spi
+.include ./full_tester.spi
+
+.global gnd vdd
+
+*** SUBCIRCUIT word_driver FROM CELL word_driver{sch}
+.SUBCKT word_driver clk deq enq reset w0 w1 w2 w3 w4 w5 w6 w7 w8 read_write_n
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 w0 read_write_n net@10 gnd P L=0.022U W=0.022U
+Mpmos@0 w0 read_write_n net@0 vdd N L=0.022U W=0.022U
+Mnmos@1 w1 read_write_n net@11 gnd P L=0.022U W=0.022U
+Mpmos@2 w1 read_write_n net@2 vdd N L=0.022U W=0.022U
+Mnmos@3 w2 read_write_n net@12 gnd P L=0.022U W=0.022U
+Mpmos@4 w2 read_write_n net@3 vdd N L=0.022U W=0.022U
+Mnmos@5 w3 read_write_n net@13 gnd P L=0.022U W=0.022U
+Mpmos@6 w3 read_write_n net@4 vdd N L=0.022U W=0.022U
+Mnmos@7 w4 read_write_n net@14 gnd P L=0.022U W=0.022U
+Mpmos@8 w4 read_write_n net@5 vdd N L=0.022U W=0.022U
+Mnmos@9 w5 read_write_n net@15 gnd P L=0.022U W=0.022U
+Mpmos@10 w5 read_write_n net@6 vdd N L=0.022U W=0.022U
+Mnmos@11 w6 read_write_n net@16 gnd P L=0.022U W=0.022U
+Mpmos@12 w6 read_write_n net@7 vdd N L=0.022U W=0.022U
+Mnmos@13 w7 read_write_n net@17 gnd P L=0.022U W=0.022U
+Mpmos@14 w7 read_write_n net@8 vdd N L=0.022U W=0.022U
+Mnmos@15 w8 read_write_n net@18 gnd P L=0.022U W=0.022U
+Mpmos@16 w8 read_write_n net@9 vdd N L=0.022U W=0.022U
+
+Xempty_te@0 net@36 net@0 net@2 net@3 net@4 net@5 net@6 net@7 net@8 net@9 net@10 net@11 net@12 net@13 net@14 net@15 net@16 net@17 net@18 memory__empty_tester
+Xfull_tes@0 net@41 net@0 net@2 net@3 net@4 net@5 net@6 net@7 net@8 net@9 net@10 net@11 net@12 net@13 net@14 net@15 net@16 net@17 net@18 memory__full_tester
+Xshift_re@0 clk deq reset net@36 net@0 net@2 net@3 net@4 net@5 net@6 net@7 net@8 net@9 memory__shift_reg
+Xshift_re@1 clk enq reset net@41 net@10 net@11 net@12 net@13 net@14 net@15 net@16 net@17 net@18 memory__shift_reg
+.ENDS word_driver
+
+.END
