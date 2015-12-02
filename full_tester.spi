@@ -1,0 +1,34 @@
+
+.include /home1/e/ese370/ptm/22nm_HP.pm
+.include ./nand2.spi
+.include ./nor2.spi
+
+.global gnd vdd
+
+*** SUBCIRCUIT full_tester FROM CELL full_tester{sch}
+.SUBCKT full_tester empty r0 r1 r2 r3 r4 r5 r6 r7 w0 w1 w2 w3 w4 w5 w6 w7
+** GLOBAL gnd
+** GLOBAL vdd
+
+Xnand2@4 r0 w7 net@16 nand2 w=1
+Xnand2@5 r1 w0 net@18 nand2 w=1
+Xnand2@6 r2 w1 net@30 nand2 w=1
+Xnand2@7 r3 w2 net@28 nand2 w=1
+Xnand2@8 r4 w3 net@26 nand2 w=1
+Xnand2@9 r5 w4 net@24 nand2 w=1
+Xnand2@10 r6 w5 net@22 nand2 w=1
+Xnand2@11 r7 w6 net@20 nand2 w=1
+
+Xnand2@0 net@16 net@18 net@32 nand2 w=2
+Xnand2@1 net@30 net@28 net@34 nand2 w=2
+Xnand2@2 net@26 net@24 net@38 nand2 w=2
+Xnand2@3 net@22 net@20 net@36 nand2 w=2
+
+Xnor2@8 net@32 net@34 net@40 nor2 w=4
+Xnor2@9 net@38 net@36 net@42 nor2 w=4
+
+Xnand2@12 net@40 net@42 empty nand2 w=8
+
+.ENDS full_tester
+
+.END

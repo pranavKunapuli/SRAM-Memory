@@ -8,10 +8,10 @@
 .SUBCKT nand2 A B Out w=1
 ** GLOBAL gnd
 ** GLOBAL vdd
-Mnmos@0 Out B net@3 gnd N L=0.022U W=w*0.022U
-Mnmos@1 net@3 A gnd gnd N L=0.022U W=w*0.022U
-Mpmos@0 vdd A Out vdd P L=0.022U W=w*2*0.022U
-Mpmos@1 vdd B Out vdd P L=0.022U W=w*2*0.022U
+Mnmos@0 Out B net@3 gnd N L=0.022U W=w*2*0.022U
+Mnmos@1 net@3 A gnd gnd N L=0.022U W=w*2*0.022U
+Mpmos@0 vdd A Out vdd P L=0.022U W=w*0.022U
+Mpmos@1 vdd B Out vdd P L=0.022U W=w*0.022U
 .ENDS nand2
 
 .END
