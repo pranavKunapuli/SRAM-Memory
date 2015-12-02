@@ -1,7 +1,7 @@
 
 .include /home1/e/ese370/ptm/22nm_HP.pm
+.include ./nand3.spi
 .include ./nand2.spi
-.include ./nor2.spi
 
 .global gnd vdd
 
@@ -9,32 +9,26 @@
 .SUBCKT empty_tester empty r0 r1 r2 r3 r4 r5 r6 r7 r8 w0 w1 w2 w3 w4 w5 w6 w7 w8
 ** GLOBAL gnd
 ** GLOBAL vdd
+Xnand2@4 r0 w0 net@120 nand2
+Xnand2@5 r1 w1 net@124 nand2
+Xnand2@6 r2 w2 net@122 nand2
+Xnand2@7 r3 w3 net@128 nand2
+Xnand2@14 r4 w4 net@126 nand2
+Xnand2@9 r5 w5 net@130 nand2
+Xnand2@15 r6 w6 net@131 nand2
+Xnand2@11 r7 w7 net@132 nand2
+Xnand2@13 r8 w8 net@136 nand2
 
-Xnand2@4 r0 w0 net@16 nand2 w=1
-Xnand2@5 r1 w1 net@18 nand2 w=1
-Xnand2@6 r2 w2 net@30 nand2 w=1
-Xnand2@7 r3 w3 net@28 nand2 w=1
-Xnand2@8 r4 w4 net@26 nand2 w=1
-Xnand2@9 r5 w5 net@24 nand2 w=1
-Xnand2@10 r6 w6 net@22 nand2 w=1
-Xnand2@11 r7 w7 net@20 nand2 w=1
-Xnand2@13 r8 w8 net@103 nand2 w=1
 
-Xnand2@0 net@16 net@18 net@32 nand2 w=2
-Xnand2@1 net@30 net@28 net@34 nand2 w=2
-Xnand2@2 net@26 net@24 net@38 nand2 w=2
-Xnand2@3 net@22 net@20 net@36 nand2 w=2
+Xnand3@0 net@120 net@124 net@122 net@140 nand3 w=2
+Xnand3@1 net@128 net@126 net@130 net@138 nand3 w=2
+Xnand3@2 net@131 net@132 net@136 net@142 nand3 w=2
 
-Xnor2@8 net@32 net@34 net@40 nor2 w=4
-Xnor2@9 net@38 net@36 net@42 nor2 w=4
+Xnot@0 net@140 net@140n not w=4
+Xnot@1 net@138 net@138n not w=4
+Xnot@2 net@142 net@142n not w=4
 
-Xnand2@12 net@40 net@42 net@102 nand2 w=8
-
-Xnot@0 net@106 net@102 not w=16
-Xnand2@15 net@102 net@103 empty_n nand2 w=32
-
-Xnot@1 empty_n empty not w=32
-
+Xnand3@3 net@140n net@138n net@142n empty nand3 w=8
 .ENDS empty_tester
 
 .END
