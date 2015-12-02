@@ -1,0 +1,18 @@
+
+.include /home1/e/ese370/ptm/22nm_HP.pm
+
+.global gnd vdd
+
+*** SUBCIRCUIT nor3 FROM CELL nor3{sch}
+.SUBCKT nor3 A B C Out w=1
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 Out A gnd gnd N L=0.022U W=0.022U
+Mnmos@1 Out B gnd gnd N L=0.022U W=0.022U
+Mnmos@2 Out C gnd gnd N L=0.022U W=0.022U
+Mpmos@0 vdd A net@1 vdd P L=0.022U W=w*3*0.022U
+Mpmos@1 net@1 B net@0 vdd P L=0.022U W=w*3*0.022U
+Mpmos@2 net@0 C Out vdd P L=0.022U W=w*3*0.022U
+.ENDS nor3
+
+.END
