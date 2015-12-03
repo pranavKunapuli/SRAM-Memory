@@ -10,6 +10,7 @@
 ** GLOBAL vdd
 Xnand2@0 clk_n clk_n_d clk_d nand2 w=16
 Xnot@0 clk clk_n not w=4
+
 Xnot@1 clk net@1 not w=4
 Xnot@2 net@1 net@2 not w=4
 Xnot@3 net@2 net@3 not w=4
@@ -18,7 +19,12 @@ Xnot@5 net@4 net@5 not w=4
 Xnot@6 net@5 net@6 not w=4
 Xnot@7 net@6 net@7 not w=4
 Xnot@8 net@7 net@8 not w=4
-Xnot@9 net@8 clk_n_d not w=4
+Xnot@9 net@8 net@9 not w=4
+Xnot@10 net@9 net@10 not w=4
+Xnot@11 net@10 net@11 not w=4
+Xnot@12 net@11 net@12 not w=4
+Xnot@13 net@12 clk_n_d not w=4
+
 .ENDS clock_delay
 
 .END

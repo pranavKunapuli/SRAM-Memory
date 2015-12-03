@@ -2991,7 +2991,7 @@ Eout||D5G2;|conn@2|y|O
 X
 
 # Cell word_driver;1{ic}
-Cword_driver;1{ic}||artwork|1449098975671|1449114067618|E
+Cword_driver;1{ic}||artwork|1449098975671|1449170730565|E
 Ngeneric:Facet-Center|art@0||0|0||||AV
 NOpened-Thicker-Polygon|art@1||0|0|6|18|||SCHEM_function(D5G2;Y10;)Sword_driver|trace()V[-3/-9,-3/9,3/9,3/-9,-3/-9]
 Nschematic:Bus_Pin|pin@0||-5|4||||
@@ -3024,6 +3024,10 @@ Nschematic:Bus_Pin|pin@26||-5|-4||||
 Nschematic:Wire_Pin|pin@27||-3|-4||||
 Nschematic:Bus_Pin|pin@28||-5|-7||||
 Nschematic:Wire_Pin|pin@29||-3|-7||||
+Nschematic:Bus_Pin|pin@30||1.5|8.5||||
+Nschematic:Wire_Pin|pin@31||1.5|6.5||||
+Nschematic:Bus_Pin|pin@32||1.5|9.5||||
+Nschematic:Wire_Pin|pin@33||1.5|7.5||||
 Aschematic:wire|net@0|||0|pin@1||-3|4|pin@0||-5|4
 Aschematic:wire|net@1|||0|pin@3||-3|2|pin@2||-5|2
 Aschematic:wire|net@2|||0|pin@5||-3|0|pin@4||-5|0
@@ -3039,10 +3043,14 @@ Aschematic:wire|net@11|||1800|pin@23||3|-6|pin@22||5|-6
 Aschematic:wire|net@12|||1800|pin@25||3|-8|pin@24||5|-8
 Aschematic:wire|net@13|||0|pin@27||-3|-4|pin@26||-5|-4
 Aschematic:wire|net@14|||0|pin@29||-3|-7|pin@28||-5|-7
+Aschematic:wire|net@15|||2700|pin@31||1.5|6.5|pin@30||1.5|8.5
+Aschematic:wire|net@16|||2700|pin@33||1.5|7.5|pin@32||1.5|9.5
 Eclk||D5G2;|pin@0||I
 Edeq||D5G2;X-1;|pin@2||I
+Eempty||D5G2;|pin@30||O
 Een||D5G2;X-0.5;|pin@28||I
 Eenq||D5G2;|pin@4||I
+Efull||D5G2;|pin@32||O
 Ewrite_read_n|read_write_n|D5G2;|pin@26||I
 Ereset||D5G2;|pin@6||I
 Ew0||D5G2;|pin@8||O
@@ -3057,7 +3065,7 @@ Ew8||D5G2;|pin@24||O
 X
 
 # Cell word_driver;1{sch}
-Cword_driver;1{sch}||schematic|1449098012506|1449116449651|
+Cword_driver;1{sch}||schematic|1449098012506|1449170730565|
 Ngeneric:Facet-Center|art@0||0|0||||AV
 NOff-Page|conn@0||-41|31.5||||
 NOff-Page|conn@1||-41|27.5||||
@@ -3074,6 +3082,8 @@ NOff-Page|conn@11||57|-71.25||||
 NOff-Page|conn@12||56.5|-79.5||||
 NOff-Page|conn@13||-42|-4.5||||
 NOff-Page|conn@14||-43.5|-10.5||||
+NOff-Page|conn@15||46.5|40||||
+NOff-Page|conn@16||46.5|36.5||||
 Iempty_tester;1{ic}|empty_te@0||-6.5|19.5|||D5G4;
 Ifull_tester;1{ic}|full_tes@0||32.5|19.5|||D5G4;
 NTransistor|nmos@0||31.5|-7.5|||||ATTR_length(D5G0.5;X-0.5;Y-1;)S1|ATTR_width(D5G1;X0.5;Y-1;)S1
@@ -3220,6 +3230,9 @@ NWire_Pin|pin@185||52|-54.75||||
 NWire_Pin|pin@186||55|-62.7||||
 NWire_Pin|pin@187||52|-71.25||||
 NWire_Pin|pin@188||52|-79.5||||
+NWire_Pin|pin@189||44|38.5||||
+NWire_Pin|pin@190||44|40||||
+NWire_Pin|pin@191||44|36.5||||
 NTransistor|pmos@0||31.5|-11.5||||2|ATTR_length(D5G0.5;X-0.5;Y-1;)S1|ATTR_width(D5G1;X0.5;Y-1;)S1
 Ishift_reg;1{ic}|shift_re@0||-20|26.5|||D5G4;
 Ishift_reg;1{ic}|shift_re@1||-20|8.5|||D5G4;
@@ -3457,10 +3470,17 @@ Awire|net@518|||0|conn@11|a|55|-71.25|pin@187||52|-71.25
 Awire|net@519|||900|nor2@7|O|52|-70.9|pin@187||52|-71.25
 Awire|net@520|||0|conn@12|a|54.5|-79.5|pin@188||52|-79.5
 Awire|net@521|||900|nor2@8|O|52|-79.1|pin@188||52|-79.5
+Awire|net@522|||1800|pin@1||4|38.5|pin@189||44|38.5
+Awire|net@523|||1800|pin@16||42|40|pin@190||44|40
+Awire|net@524|||0|conn@15|a|44.5|40|pin@190||44|40
+Awire|net@525|||900|pin@189||44|38.5|pin@191||44|36.5
+Awire|net@526|||0|conn@16|a|44.5|36.5|pin@191||44|36.5
 Eclk||D5G2;|conn@0|a|I
 Edeq||D5G2;|conn@1|a|I
+Eempty||D5G2;|conn@16|y|O
 Een||D5G2;|conn@14|a|I
 Eenq||D5G2;|conn@2|a|I
+Efull||D5G2;|conn@15|y|O
 Ewrite_read_n|read_write_n|D5G2;|conn@13|a|I
 Ereset||D5G2;|conn@3|a|I
 Ew0||D5G2;|conn@4|y|O

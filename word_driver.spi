@@ -3,12 +3,13 @@
 .include ./full_tester.spi
 .include ./nor2.spi
 .include ./not.spi
-.include ./shift_reg.spi
+.include ./shift_reg_r.spi
+.include ./shift_reg_w.spi
 
 .global gnd vdd
 
 *** SUBCIRCUIT word_driver FROM CELL word_driver{sch}
-.SUBCKT word_driver clk deq en enq read_write_n reset w0 w1 w2 w3 w4 w5 w6 w7 w8
+.SUBCKT word_driver clk deq en enq read_write_n reset w0 w1 w2 w3 w4 w5 w6 w7 w8 empty full
 ** GLOBAL gnd
 ** GLOBAL vdd
 Mnmos@0 w0e read_write_n r0 gnd N L=0.022U W=0.022U
@@ -51,8 +52,8 @@ Xnot@6 w6e w6e_n not
 Xnot@7 w5e w7e_n not
 Xnot@8 w8e w8e_n not
 Xnot@9 en en_n not
-Xshift_re@0 clk deq reset empty r0 r1 r2 r3 r4 r5 r6 r7 r8 shift_reg
-Xshift_re@1 clk enq reset full wr0 wr1 wr2 wr3 wr4 wr5 wr6 wr7 wr8 shift_reg
+Xshift_re@0 clk deq reset empty r0 r1 r2 r3 r4 r5 r6 r7 r8 shift_reg_r
+Xshift_re@1 clk enq reset full wr0 wr1 wr2 wr3 wr4 wr5 wr6 wr7 wr8 shift_reg_w
 .ENDS word_driver
 
 .END
