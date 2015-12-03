@@ -1,7 +1,4 @@
 
-* Model cards are described in this file:
-.include /home1/e/ese370/ptm/22nm_HP.pm
-
 .global gnd vdd
 
 *** SUBCIRCUIT nand2 FROM CELL nand2{sch}

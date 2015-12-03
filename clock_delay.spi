@@ -1,6 +1,4 @@
 
-* Model cards are described in this file:
-.include /home1/e/ese370/ptm/22nm_HP.pm
 .include ./not.spi
 .include ./nand2.spi
 
@@ -16,7 +14,11 @@ Xnot@1 clk net@1 not w=4
 Xnot@2 net@1 net@2 not w=4
 Xnot@3 net@2 net@3 not w=4
 Xnot@4 net@3 net@4 not w=4
-Xnot@5 net@4 clk_n_d not w=4
+Xnot@5 net@4 net@5 not w=4
+Xnot@6 net@5 net@6 not w=4
+Xnot@7 net@6 net@7 not w=4
+Xnot@8 net@7 net@8 not w=4
+Xnot@9 net@8 clk_n_d not w=4
 .ENDS clock_delay
 
 .END

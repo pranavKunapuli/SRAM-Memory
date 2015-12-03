@@ -1,25 +1,29 @@
 
-.include /home1/e/ese370/ptm/22nm_HP.pm
-.include ./not.spi
 .include ./column_precharger.spi
+.include ./not.spi
 
 .global gnd vdd
 
 *** SUBCIRCUIT bit_driver FROM CELL bit_driver{sch}
-.SUBCKT bit_driver bit bit_n in out precharge_en read_write_n
-** GLOBAL gnd
-** GLOBAL vdd
-Mnmos@2 net@22 out net@35 gnd N L=0.022U W=0.044U
-Mnmos@3 out net@22 net@35 gnd N L=0.022U W=0.044U
-Mnmos@4 net@35 read_write_n gnd gnd N L=0.022U W=0.044U
-Mnmos@5 bit read_write_n out gnd N L=0.022U W=0.022U
-Mnmos@6 bit_n read_write_n net@22 gnd N L=0.022U W=0.022U
-Mpmos@4 vdd out net@22 vdd P L=0.022U W=0.022U
-Mpmos@5 vdd net@22 out vdd P L=0.022U W=0.022U
-Mpmos@6 bit read_write_n in vdd P L=0.022U W=0.352U
-Mpmos@7 bit_n read_write_n net@1 vdd P L=0.022U W=0.352U
+.SUBCKT bit_driver bit bit_n in out precharge_en write_read_n
+
+Mnmos@2 out_n out net@35 gnd N L=0.022U W=0.044U
+Mnmos@3 out out_n net@35 gnd N L=0.022U W=0.044U
+Mnmos@4 net@35 write_read_n gnd gnd N L=0.022U W=0.044U
+
+Mnmos@5 bit write_read_n in gnd N L=0.022U W=0.352U
+Mpmos@6 bit write_read_n out vdd P L=0.022U W=0.022U
+
+Mnmos@6 bit_n write_read_n in_n gnd N L=0.022U W=0.352U
+Mpmos@7 bit_n write_read_n out_n vdd P L=0.022U W=0.022U
+
+Mpmos@4 vdd out out_n vdd P L=0.022U W=0.022U
+Mpmos@5 vdd out_n out vdd P L=0.022U W=0.022U
+
+
 Xcolumn_p@0 bit bit_n precharge_en column_precharger
-Xnot@0 in net@1 not
+Xnot@0 in in_n not
 .ENDS bit_driver
+
 
 .END

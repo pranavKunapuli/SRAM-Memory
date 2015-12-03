@@ -1,6 +1,4 @@
 
-.include /home1/e/ese370/ptm/22nm_HP.pm
-
 .global gnd vdd
 
 *** SUBCIRCUIT sram FROM CELL sram{sch}

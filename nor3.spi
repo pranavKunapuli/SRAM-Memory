@@ -1,6 +1,4 @@
 
-.include /home1/e/ese370/ptm/22nm_HP.pm
-
 .global gnd vdd
 
 *** SUBCIRCUIT nor3 FROM CELL nor3{sch}
