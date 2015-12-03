@@ -1,0 +1,22 @@
+
+.include /home1/e/ese370/ptm/22nm_HP.pm
+.include ./sram.spi
+
+.global gnd vdd
+
+*** SUBCIRCUIT memory_column FROM CELL memory_column{sch}
+.SUBCKT memory_column bit bit_b W0 W1 W2 W3 W4 W5 W6 W7 W8
+** GLOBAL gnd
+** GLOBAL vdd
+Xsram@0 bit bit_b W0 sram
+Xsram@1 bit bit_b W1 sram
+Xsram@2 bit bit_b W2 sram
+Xsram@3 bit bit_b W3 sram
+Xsram@4 bit bit_b W4 sram
+Xsram@5 bit bit_b W5 sram
+Xsram@6 bit bit_b W6 sram
+Xsram@7 bit bit_b W7 sram
+Xsram@8 bit bit_b W8 sram
+.ENDS memory_column
+
+.END

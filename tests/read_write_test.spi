@@ -1,0 +1,26 @@
+
+.include /home1/e/ese370/ptm/22nm_HP.pm
+.include ../bit_driver.spi
+.include ../memory_column.spi
+.include ../clock_delay.spi
+.include ../not.spi
+.include ../word_driver.spi
+
+.global gnd vdd
+
+** GLOBAL gnd
+** GLOBAL vdd
+VVPWL@0 net@20 gnd pwl (0 0 1 1) DC 0V AC 0V 0
+VVPWL@1 net@24 gnd pwl (0 0 1 1) DC 0V AC 0V 0
+VVPWL@2 net@28 gnd pwl (0 0 1 1) DC 0V AC 0V 0
+VVPWL@3 net@45 gnd pwl (0 0 1 1) DC 0V AC 0V 0
+VVPulse@0 net@4 gnd pulse (0 1V 0ns 200ps 200ps 3ns 6ns) DC 0V AC 0V 0
+VV_Generi@0 vdd gnd DC 1 AC 0
+Xbit_driv@0 net@44 net@34 net@45 net@47 net@4 net@2 bit_driver
+Xclock_de@0 net@4 net@2 clock_delay
+Xmemory_c@0 net@34 net@44 net@43 net@42 net@41 net@40 net@39 net@38 net@37 net@36 net@35 memory_column
+Xnot@0 net@4 net@16 not
+Xnot@1 net@47 not@1_A_ not
+Xword_dri@0 net@4 net@24 net@16 net@28 net@2 net@20 net@43 net@42 net@41 net@40 net@39 net@38 net@37 net@36 net@35 word_driver
+
+.END
