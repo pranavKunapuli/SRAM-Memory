@@ -3,8 +3,7 @@
 
 *** SUBCIRCUIT sram FROM CELL sram{sch}
 .SUBCKT sram bit bit_b word
-** GLOBAL gnd
-** GLOBAL vdd_mem
+
 Mnmos@0 bit_b_i bit_i gnd gnd N L=0.022U W=0.022U
 Mnmos@1 bit_i bit_b_i gnd gnd N L=0.022U W=0.022U
 Mnmos@2 bit_i word bit gnd N L=0.022U W=0.022U

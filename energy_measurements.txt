@@ -1,0 +1,22 @@
+Enqueue 1 into 0
+
+	logic: 4.694e-14
+	memory: 3.43067e-14
+	clocking: 2.20214e-14
+
+	Total: 1.032681e-13
+
+Enqueue 0 into 1
+
+	logic: 3.76685e014
+	memory: 4.23821e-14
+	clocking: 2.20240e-14
+
+	Total: 1.020746e-13
+
+Dequeue 1 from 0
+
+Dequeue 0 from 1
+
+Both
+

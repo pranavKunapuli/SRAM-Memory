@@ -7,6 +7,6 @@
 ** GLOBAL vdd_mem
 Mnmos@0 A_ A gnd gnd N L=0.022U W=w*0.022U
 Mpmos@0 vdd_mem A A_ vdd_mem P L=0.022U W=w*0.022U
-.ENDS not
+.ENDS not_mem
 
 .END
