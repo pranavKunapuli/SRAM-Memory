@@ -27,15 +27,12 @@ Xclock_de@0 clk read_write_n clock_delay
 Xmemory_c@0 bit bit_b w0 w1 w2 w3 w4 w5 w6 w7 w8 w9 memory_column
 
 Xbit_driv@1 bit bit_b in_store_b out_store clk write_read_n bit_driver
-Xclock_de@1 clk read_write_n clock_delay
 Xmemory_c@1 bit bit_b w0 w1 w2 w3 w4 w5 w6 w7 w8 w9 memory_column
 
 Xbit_driv@2 bit bit_b in_store_b out_store clk write_read_n bit_driver
-Xclock_de@2 clk read_write_n clock_delay
 Xmemory_c@2 bit bit_b w0 w1 w2 w3 w4 w5 w6 w7 w8 w9 memory_column
 
 Xbit_driv@3 bit bit_b in_store_b out_store clk write_read_n bit_driver
-Xclock_de@3 clk read_write_n clock_delay
 Xmemory_c@3 bit bit_b w0 w1 w2 w3 w4 w5 w6 w7 w8 w9 memory_column
 
 Xnot@0 clk clk_n not_clock
