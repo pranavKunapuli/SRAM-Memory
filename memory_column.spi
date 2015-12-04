@@ -1,7 +1,7 @@
 
 .include ./sram.spi
 
-.global gnd vdd
+.global gnd vdd_mem
 
 *** SUBCIRCUIT memory_column FROM CELL memory_column{sch}
 .SUBCKT memory_column bit bit_b W0 W1 W2 W3 W4 W5 W6 W7 W8 W9

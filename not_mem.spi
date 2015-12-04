@@ -1,0 +1,12 @@
+
+.global gnd vdd_mem
+
+*** SUBCIRCUIT not FROM CELL not{sch}
+.SUBCKT not_mem A A_ w=1
+** GLOBAL gnd
+** GLOBAL vdd_mem
+Mnmos@0 A_ A gnd gnd N L=0.022U W=w*0.022U
+Mpmos@0 vdd_mem A A_ vdd_mem P L=0.022U W=w*0.022U
+.ENDS not
+
+.END
