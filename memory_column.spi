@@ -19,3 +19,4 @@ Xsram@8 bit bit_b W8 sram
 .ENDS memory_column
 
 .END
+

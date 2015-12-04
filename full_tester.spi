@@ -6,6 +6,7 @@
 
 *** SUBCIRCUIT full_tester FROM CELL full_tester{sch}
 .SUBCKT full_tester full r0 r1 r2 r3 r4 r5 r6 r7 r8 w0 w1 w2 w3 w4 w5 w6 w7 w8
+
 Xnand2@4 r0 w7 net@120 nand2 
 Xnand2@5 r1 w8 net@124 nand2
 Xnand2@6 r2 w0 net@122 nand2
