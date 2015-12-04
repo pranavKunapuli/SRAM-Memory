@@ -17,7 +17,10 @@ VVPWL@1 deq gnd pwl (0ns 0v) DC 0V AC 0V 0
 VVPWL@2 enq gnd pwl (0ns 0v 1.5ns 0v 1.5ns 1v 3.5ns 1v 3.5ns 0v) DC 0V AC 0V 0
 VVPWL@3 in gnd pwl (0ns 1v) DC 0V AC 0V 0
 VVPulse@0 clk gnd pulse (0 1V 0ns 0ps 0ps 1ns 2ns) DC 0V AC 0V 0
+
 VV_Generi@0 vdd gnd DC 1 AC 0
+VV_Generi@1 vdd_mem gnd DC 1 AC 0
+VV_Generi@2 vdd_clocking gnd DC 1 AC 0
 
 Xbit_driv@0 bit bit_b in_store_b out_store clk write_read_n bit_driver
 Xclock_de@0 clk read_write_n clock_delay
