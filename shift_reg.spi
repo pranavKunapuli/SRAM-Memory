@@ -7,10 +7,10 @@
 .global gnd vdd
 
 *** SUBCIRCUIT shift_reg FROM CELL shift_reg{sch}
-.SUBCKT shift_reg Clk En Reset SS W0 W1 W2 W3 W4 W5 W6 W7 W8
+.SUBCKT shift_reg Clk En Reset SS W0 W1 W2 W3 W4 W5 W6 W7 W8 W9
 ** GLOBAL gnd
 ** GLOBAL vdd
-Xd_ff_sr@0 net@88 W8 W0 d_ff_sr@0_Q_ vdd Reset d_ff_sr
+Xd_ff_sr@0 net@88 W9 W0 d_ff_sr@0_Q_ vdd Reset d_ff_sr
 Xd_ff_sr@1 net@88 W0 W1 d_ff_sr@1_Q_ Reset vdd d_ff_sr
 Xd_ff_sr@2 net@88 W1 W2 d_ff_sr@2_Q_ Reset vdd d_ff_sr
 Xd_ff_sr@3 net@88 W2 W3 d_ff_sr@3_Q_ Reset vdd d_ff_sr
@@ -19,6 +19,7 @@ Xd_ff_sr@5 net@88 W4 W5 d_ff_sr@5_Q_ Reset vdd d_ff_sr
 Xd_ff_sr@6 net@88 W5 W6 d_ff_sr@6_Q_ Reset vdd d_ff_sr
 Xd_ff_sr@7 net@88 W6 W7 d_ff_sr@7_Q_ Reset vdd d_ff_sr
 Xd_ff_sr@8 net@88 W7 W8 d_ff_sr@8_Q_ Reset vdd d_ff_sr
+Xd_ff_sr@9 net@88 W8 W9 d_ff_sr@9_Q_ Reset vdd d_ff_sr
 Xnor3@1 net@84 net@87 SS net@88 nor3
 Xnot@2 Clk net@84 not
 Xnot@3 En net@87 not

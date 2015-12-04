@@ -9,9 +9,10 @@
 .global gnd vdd
 
 *** SUBCIRCUIT word_driver FROM CELL word_driver{sch}
-.SUBCKT word_driver clk deq en enq read_write_n reset w0 w1 w2 w3 w4 w5 w6 w7 w8 empty full
+.SUBCKT word_driver clk deq en enq read_write_n reset w0 w1 w2 w3 w4 w5 w6 w7 w8 w9 empty full
 ** GLOBAL gnd
 ** GLOBAL vdd
+
 Mnmos@0 w0e read_write_n r0 gnd N L=0.022U W=0.022U
 Mpmos@0 w0e read_write_n wr0 vdd P L=0.022U W=0.022U
 Mnmos@1 w1e read_write_n r1 gnd N L=0.022U W=0.022U
@@ -26,13 +27,16 @@ Mnmos@9 w5e read_write_n r5 gnd N L=0.022U W=0.022U
 Mnmos@10 w5e read_write_n wr5 vdd P L=0.022U W=0.022U
 Mnmos@11 w6e read_write_n r6 gnd N L=0.022U W=0.022U
 Mnmos@12 w6e read_write_n wr6 vdd P L=0.022U W=0.022U
-Mnmos@13 w5e read_write_n r7 gnd N L=0.022U W=0.022U
-Mnmos@14 w5e read_write_n wr7 vdd P L=0.022U W=0.022U
+Mnmos@13 w7e read_write_n r7 gnd N L=0.022U W=0.022U
+Mnmos@14 w7e read_write_n wr7 vdd P L=0.022U W=0.022U
 Mnmos@15 w8e read_write_n r8 gnd N L=0.022U W=0.022U
 Mnmos@16 w8e read_write_n wr8 vdd P L=0.022U W=0.022U
+Mnmos@17 w9e read_write_n r9 gnd N L=0.022U W=0.022U
+Mnmos@18 w9e read_write_n wr9 vdd P L=0.022U W=0.022U
 
-Xempty_te@0 empty r0 r1 r2 r3 r4 r5 r6 r7 r8 wr0 wr1 wr2 wr3 wr4 wr5 wr6 wr7 wr8 empty_tester
-Xfull_tes@0 full r0 r1 r2 r3 r4 r5 r6 r7 r8 wr0 wr1 wr2 wr3 wr4 wr5 wr6 wr7 wr8 full_tester
+Xempty_te@0 empty r0 r1 r2 r3 r4 r5 r6 r7 r8 r9 wr0 wr1 wr2 wr3 wr4 wr5 wr6 wr7 wr8 wr9 empty_tester
+Xfull_tes@0 full r0 r1 r2 r3 r4 r5 r6 r7 r8 r9 wr0 wr1 wr2 wr3 wr4 wr5 wr6 wr7 wr8 wr9 full_tester
+
 Xnor2@0 w0e_n en_n w0 nor2
 Xnor2@1 w1e_n en_n w1 nor2
 Xnor2@2 w2e_n en_n w2 nor2
@@ -42,6 +46,8 @@ Xnor2@5 w5e_n en_n w5 nor2
 Xnor2@6 w6e_n en_n w6 nor2
 Xnor2@7 w7e_n en_n w7 nor2
 Xnor2@8 w8e_n en_n w8 nor2
+Xnor2@9 w9e_n en_n w9 nor2
+
 Xnot@0 w0e w0e_n not
 Xnot@1 w1e w1e_n not
 Xnot@2 w2e w2e_n not
@@ -49,11 +55,15 @@ Xnot@3 w3e w3e_n not
 Xnot@4 w4e w4e_n not
 Xnot@5 w5e w5e_n not
 Xnot@6 w6e w6e_n not
-Xnot@7 w5e w7e_n not
+Xnot@7 w7e w7e_n not
 Xnot@8 w8e w8e_n not
-Xnot@9 en en_n not
-Xshift_re@0 clk deq reset empty r0 r1 r2 r3 r4 r5 r6 r7 r8 shift_reg_r
-Xshift_re@1 clk enq reset full wr0 wr1 wr2 wr3 wr4 wr5 wr6 wr7 wr8 shift_reg_w
+Xnot@9 w9e w9e_n not
+
+Xnot@10 en en_n not
+
+Xshift_re@0 clk deq reset empty r0 r1 r2 r3 r4 r5 r6 r7 r8 r9 shift_reg_r
+Xshift_re@1 clk enq reset full wr0 wr1 wr2 wr3 wr4 wr5 wr6 wr7 wr8 wr9 shift_reg_w
+
 .ENDS word_driver
 
 .END

@@ -15,7 +15,7 @@
 VVPWL@0 reset gnd pwl (0ns 1v 0ns 0v 1ns 0v 1ns 1v) DC 0V AC 0V 0
 VVPWL@1 deq gnd pwl (0ns 0v 3.5ns 0v 3.5ns 1v) DC 0V AC 0V 0
 VVPWL@2 enq gnd pwl (0ns 0v 1.5ns 0v 1.5ns 1v) DC 0V AC 0V 0
-VVPWL@3 in gnd pwl (0ns 1v) DC 0V AC 0V 0
+VVPWL@3 in gnd pwl (0ns 0v) DC 0V AC 0V 0
 VVPulse@0 clk gnd pulse (0 1V 0ns 0ps 0ps 1ns 2ns) DC 0V AC 0V 0
 
 VV_Generi@0 vdd gnd DC 1 AC 0
@@ -37,7 +37,29 @@ xd_ff_sr@3 out_clk out_store out net@xd_ff3 vdd vdd d_ff_sr
 xnor2@0 full_store clk_n in_clk nor2
 xnor2@1 empty_store clk_n out_clk nor2
 
-.ic v(bit)=0
-.ic v(bit_b)=1
-
 .END
+
+* Continuously store 1 into fifo while dequeing
+*
+* 0 ns: (rising clk) reset async, write word line = 0, read word line = 0
+*		store input 1 to flip-flop
+*		Store in FF and output empty signal
+*
+* 1 ns: (falling clk) 
+*       read junk from w0
+*		store input 1 to w0
+*
+* 2 ns: wwl = 1, rwl = 0
+*       do not store junk from w0 (output unchanged)
+*		store 1 to FF
+*		no longer empty, store in FF and output
+*		
+* 3 ns: read 1 from w0
+* 		store 1 to w1
+*
+* 4 ns: wwl = 2, rwl = 1
+*		store output 1 to FF
+*		store input 1 to FF
+* 
+* 5 ns: read 1 from w0
+* 		store 1 to w2
