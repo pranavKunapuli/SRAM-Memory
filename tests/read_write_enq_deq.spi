@@ -21,14 +21,14 @@ VVPulse@0 clk gnd pulse (0 1V 0ns 0ps 0ps 1ns 2ns) DC 0V AC 0V 0
 VV_Generi@0 vdd gnd DC 1 AC 0
 Xbit_driv@0 bit bit_b in_store out_store clk write_read_n bit_driver
 Xclock_de@0 clk read_write_n clock_delay
-Xmemory_c@0 bit bit_b w0 w1 w2 w3 w4 w5 w6 w7 w8 memory_column
+Xmemory_c@0 bit bit_b w0 w1 w2 w3 w4 w5 w6 w7 w8 w9 memory_column
 Xnot@0 clk clk_n not
 
 Xnot@1 read_write_n write_read_n not
 Xnot@2 enq enq_n not
 Xnot@3 deq deq_n not
 
-Xword_dri@0 clk deq clk_n enq read_write_n reset w0 w1 w2 w3 w4 w5 w6 w7 w8 empty full word_driver 
+Xword_dri@0 clk deq clk_n enq read_write_n reset w0 w1 w2 w3 w4 w5 w6 w7 w8 w9 empty full word_driver 
 
 xd_ff_sr@0 clk empty empty_store net@xd_ff0 vdd vdd d_ff_sr
 xd_ff_sr@1 clk full full_store net@xd_ff1 vdd vdd d_ff_sr

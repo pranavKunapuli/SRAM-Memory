@@ -5,28 +5,31 @@
 .global gnd vdd
 
 *** SUBCIRCUIT full_tester FROM CELL full_tester{sch}
-.SUBCKT full_tester full r0 r1 r2 r3 r4 r5 r6 r7 r8 w0 w1 w2 w3 w4 w5 w6 w7 w8
+.SUBCKT full_tester full r0 r1 r2 r3 r4 r5 r6 r7 r8 r9 w0 w1 w2 w3 w4 w5 w6 w7 w8 w9
 
-Xnand2@4 r0 w7 net@120 nand2 
-Xnand2@5 r1 w8 net@124 nand2
-Xnand2@6 r2 w0 net@122 nand2
-Xnand2@7 r3 w1 net@128 nand2
-Xnand2@14 r4 w2 net@126 nand2
-Xnand2@9 r5 w3 net@130 nand2
-Xnand2@15 r6 w4 net@131 nand2
-Xnand2@11 r7 w5 net@132 nand2
-Xnand2@13 r8 w6 net@136 nand2
+Xnand2@16 r0 w8 p0 nand2
+Xnand2@17 r1 w9 p1 nand2
+Xnand2@18 r2 w0 p2 nand2
+Xnand2@19 r3 w1 p3 nand2
+Xnand2@20 r4 w2 net@197 nand2
+Xnand2@21 r5 w3 net@195 nand2
+Xnand2@22 r6 w4 net@200 nand2
+Xnand2@23 r7 w5 net@205 nand2
+Xnand2@24 r8 w6 net@203 nand2
+Xnand2@25 r9 w7 net@208 nand2
+
+Xnand2@26 p0 p1 net@211 nand2
+Xnand2@27 p2 p3 net@214 nand2
 
 
-Xnand3@0 net@120 net@124 net@122 net@140 nand3 w=2
-Xnand3@1 net@128 net@126 net@130 net@138 nand3 w=2
-Xnand3@2 net@131 net@132 net@136 net@142 nand3 w=2
+Xnand3@0 net@197 net@195 net@200 net@217 nand3
+Xnand3@1 net@205 net@203 net@208 net@220 nand3
 
-Xnot@0 net@140 net@140n not w=4
-Xnot@1 net@138 net@138n not w=4
-Xnot@2 net@142 net@142n not w=4
+Xnor2@0 net@211 net@214 net@224 nor2
+Xnor2@1 net@217 net@220 net@227 nor2
 
-Xnand3@3 net@140n net@138n net@142n full nand3 w=8
+Xnand2@28 net@224 net@227 full nand2
+
 .ENDS full_tester
 
 .END

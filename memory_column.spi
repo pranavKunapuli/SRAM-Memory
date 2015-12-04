@@ -4,7 +4,7 @@
 .global gnd vdd
 
 *** SUBCIRCUIT memory_column FROM CELL memory_column{sch}
-.SUBCKT memory_column bit bit_b W0 W1 W2 W3 W4 W5 W6 W7 W8
+.SUBCKT memory_column bit bit_b W0 W1 W2 W3 W4 W5 W6 W7 W8 W9
 ** GLOBAL gnd
 ** GLOBAL vdd
 Xsram@0 bit bit_b W0 sram
@@ -16,6 +16,7 @@ Xsram@5 bit bit_b W5 sram
 Xsram@6 bit bit_b W6 sram
 Xsram@7 bit bit_b W7 sram
 Xsram@8 bit bit_b W8 sram
+Xsram@9 bit bit_b W9 sram
 .ENDS memory_column
 
 .END
