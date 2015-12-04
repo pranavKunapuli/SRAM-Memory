@@ -8,15 +8,15 @@
 .SUBCKT empty_tester empty r0 r1 r2 r3 r4 r5 r6 r7 r8 w0 w1 w2 w3 w4 w5 w6 w7 w8
 ** GLOBAL gnd
 ** GLOBAL vdd
-Xnand2@4 r0 w0 net@120 nand2
-Xnand2@5 r1 w1 net@124 nand2
-Xnand2@6 r2 w2 net@122 nand2
-Xnand2@7 r3 w3 net@128 nand2
-Xnand2@14 r4 w4 net@126 nand2
-Xnand2@9 r5 w5 net@130 nand2
-Xnand2@15 r6 w6 net@131 nand2
-Xnand2@11 r7 w7 net@132 nand2
-Xnand2@13 r8 w8 net@136 nand2
+Xnand2@4 r0 w8 net@120 nand2
+Xnand2@5 r1 w0 net@124 nand2
+Xnand2@6 r2 w1 net@122 nand2
+Xnand2@7 r3 w2 net@128 nand2
+Xnand2@14 r4 w3 net@126 nand2
+Xnand2@9 r5 w4 net@130 nand2
+Xnand2@15 r6 w5 net@131 nand2
+Xnand2@11 r7 w6 net@132 nand2
+Xnand2@13 r8 w7 net@136 nand2
 
 
 Xnand3@0 net@120 net@124 net@122 net@140 nand3 w=2
