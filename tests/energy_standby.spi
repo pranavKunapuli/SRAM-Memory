@@ -1,0 +1,127 @@
+
+.include /home1/e/ese370/ptm/22nm_HP.pm
+.include ../bit_driver.spi
+.include ../memory_column.spi
+.include ../clock_delay.spi
+.include ../not.spi
+.include ../word_driver.spi
+.include ../d_ff_sr.spi
+.include ../nor2.spi
+
+.global gnd vdd
+
+** GLOBAL gnd
+** GLOBAL vdd
+VVPWL@0 reset gnd pwl (0ns 1v 0ns 0v 1ns 0v 1ns 1v) DC 0V AC 0V 0
+VVPWL@1 deq gnd pwl (0ns 0v) DC 0V AC 0V 0
+VVPWL@2 enq gnd pwl (0ns 0v) DC 0V AC 0V 0
+VVPWL@3 in gnd pwl (0ns 0v 3.5ns 0v 3.5ns 1v 5.5ns 1v 5.5ns 0v) DC 0V AC 0V 0
+VVPulse@0 clk gnd pulse (0 1V 0ns 0ps 0ps 1ns 2ns) DC 0V AC 0V 0
+VV_Generi@0 vdd gnd DC 1 AC 0
+
+Xbit_driv@0 bit bit_b in_store_b out_store clk write_read_n bit_driver
+Xclock_de@0 clk read_write_n clock_delay
+Xmemory_c@0 bit bit_b w0 w1 w2 w3 w4 w5 w6 w7 w8 w9 memory_column
+
+Xbit_driv@1 bit bit_b in_store_b out_store clk write_read_n bit_driver
+Xclock_de@1 clk read_write_n clock_delay
+Xmemory_c@1 bit bit_b w0 w1 w2 w3 w4 w5 w6 w7 w8 w9 memory_column
+
+Xbit_driv@2 bit bit_b in_store_b out_store clk write_read_n bit_driver
+Xclock_de@2 clk read_write_n clock_delay
+Xmemory_c@2 bit bit_b w0 w1 w2 w3 w4 w5 w6 w7 w8 w9 memory_column
+
+Xbit_driv@3 bit bit_b in_store_b out_store clk write_read_n bit_driver
+Xclock_de@3 clk read_write_n clock_delay
+Xmemory_c@3 bit bit_b w0 w1 w2 w3 w4 w5 w6 w7 w8 w9 memory_column
+
+Xnot@0 clk clk_n not
+
+Xnot@1 read_write_n write_read_n not
+Xnot@2 enq enq_n not
+Xnot@3 deq deq_n not
+
+Xword_dri@0 clk deq clk_n enq read_write_n reset w0 w1 w2 w3 w4 w5 w6 w7 w8 w9 empty full word_driver 
+
+xd_ff_sr@0 clk empty empty_store net@xd_ff0 vdd vdd d_ff_sr
+xd_ff_sr@1 clk full full_store net@xd_ff1 vdd vdd d_ff_sr
+
+xd_ff_sr@2 in_clk in in_store net@xd_ff2 vdd vdd d_ff_sr
+xd_ff_sr@3 out_clk out_store out net@xd_ff3 vdd vdd d_ff_sr
+
+xnot@4 in_store in_store_n not w=8
+xnot@5 in_store_n in_store_b not w=16
+
+xnor2@0 full_store clk_n enq_n in_clk nor3
+xnor2@1 empty_store clk_n deq_n out_clk nor3
+
+.ic v(xmemory_c@0.xsram@0.bit_i) = 1
+.ic v(xmemory_c@0.xsram@1.bit_i) = 1
+.ic v(xmemory_c@0.xsram@2.bit_i) = 1
+.ic v(xmemory_c@0.xsram@3.bit_i) = 1
+.ic v(xmemory_c@0.xsram@4.bit_i) = 1
+.ic v(xmemory_c@0.xsram@5.bit_i) = 1
+.ic v(xmemory_c@0.xsram@6.bit_i) = 1
+.ic v(xmemory_c@0.xsram@7.bit_i) = 1
+.ic v(xmemory_c@0.xsram@8.bit_i) = 1
+.ic v(xmemory_c@0.xsram@9.bit_i) = 1
+
+.ic v(xmemory_c@1.xsram@0.bit_i) = 1
+.ic v(xmemory_c@1.xsram@1.bit_i) = 1
+.ic v(xmemory_c@1.xsram@2.bit_i) = 1
+.ic v(xmemory_c@1.xsram@3.bit_i) = 1
+.ic v(xmemory_c@1.xsram@4.bit_i) = 1
+.ic v(xmemory_c@1.xsram@5.bit_i) = 1
+.ic v(xmemory_c@1.xsram@6.bit_i) = 1
+.ic v(xmemory_c@1.xsram@7.bit_i) = 1
+.ic v(xmemory_c@1.xsram@8.bit_i) = 1
+.ic v(xmemory_c@1.xsram@9.bit_i) = 1
+
+.ic v(xmemory_c@2.xsram@0.bit_i) = 1
+.ic v(xmemory_c@2.xsram@1.bit_i) = 1
+.ic v(xmemory_c@2.xsram@2.bit_i) = 1
+.ic v(xmemory_c@2.xsram@3.bit_i) = 1
+.ic v(xmemory_c@2.xsram@4.bit_i) = 1
+.ic v(xmemory_c@2.xsram@5.bit_i) = 1
+.ic v(xmemory_c@2.xsram@6.bit_i) = 1
+.ic v(xmemory_c@2.xsram@7.bit_i) = 1
+.ic v(xmemory_c@2.xsram@8.bit_i) = 1
+.ic v(xmemory_c@2.xsram@9.bit_i) = 1
+
+.ic v(xmemory_c@3.xsram@0.bit_i) = 1
+.ic v(xmemory_c@3.xsram@1.bit_i) = 1
+.ic v(xmemory_c@3.xsram@2.bit_i) = 1
+.ic v(xmemory_c@3.xsram@3.bit_i) = 1
+.ic v(xmemory_c@3.xsram@4.bit_i) = 1
+.ic v(xmemory_c@3.xsram@5.bit_i) = 1
+.ic v(xmemory_c@3.xsram@6.bit_i) = 1
+.ic v(xmemory_c@3.xsram@7.bit_i) = 1
+.ic v(xmemory_c@3.xsram@8.bit_i) = 1
+.ic v(xmemory_c@3.xsram@9.bit_i) = 1
+
+.END
+
+* Continuously store 1 into fifo while dequeing
+*
+* 0 ns: (rising clk) reset async, write word line = 0, read word line = 0
+*		store input 1 to flip-flop
+*		Store in FF and output empty signal
+*
+* 1 ns: (falling clk) 
+*       read junk from w0
+*		store input 1 to w0
+*
+* 2 ns: wwl = 1, rwl = 0
+*       do not store junk from w0 (output unchanged)
+*		store 1 to FF
+*		no longer empty, store in FF and output
+*		
+* 3 ns: read 1 from w0
+* 		store 1 to w1
+*
+* 4 ns: wwl = 2, rwl = 1
+*		store output 1 to FF
+*		store input 1 to FF
+* 
+* 5 ns: read 1 from w0
+* 		store 1 to w2
